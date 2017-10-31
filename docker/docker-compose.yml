@@ -1,0 +1,9 @@
+version: '2'
+services:
+        homeassistant:
+                image: homeassistant
+                build: .
+                network_mode: "host"
+                volumes:
+                        - /etc/localtime:/etc/localtime:ro
+                        - /etc/homeassistant:/config
