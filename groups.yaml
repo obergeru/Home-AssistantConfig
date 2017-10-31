@@ -1,0 +1,33 @@
+kjeller_view:
+        view: yes
+        name: Kjeller
+        entities:
+         - group.kjeller_gang
+         - group.kjeller_yttergang
+
+ 
+kjeller_gang:
+        name: Kjellergang
+        entities:
+         - light.kjeller_gang_bordlampe
+         - light.kjeller_gang_2
+         - light.kjeller_gang_taklampe
+         - light.kjeller_gang_taklampe_2
+         - light.kjeller_gang
+
+kjeller_yttergang:
+        name: Kjeller Yttergang
+        entities:
+         - light.kjeller_yttergang
+         - light.kjeller_yttergang_2
+         - light.kjeller_yttergang_3
+
+soverom_paulchristian:
+        name: Soverom Paul Christian
+        entities:
+         - light.taklampe_pc
+
+soverom_annemarie:
+        name: Soverom Anne Marie
+        entities:
+         - light.taklampe_am
