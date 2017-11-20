@@ -14,10 +14,11 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+#introduction:
 
 # Enables the frontend
 frontend:
+        javascript_version: latest
 
 # Enables configuration UI
 config:
@@ -66,11 +67,6 @@ tts:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-
-tradfri:
-          host: 192.168.1.75
-          api_key: !secret tradfri_api_key
-          allow_tradfri_groups: false
 
 volvooncall:
   username: !secret volvo_username
