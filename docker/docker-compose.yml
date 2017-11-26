@@ -3,7 +3,18 @@ services:
         homeassistant:
                 image: homeassistant
                 build: homeassistant/
+                container_name: homeassistant
                 network_mode: "host"
                 volumes:
                         - /etc/localtime:/etc/localtime:ro
                         - /etc/homeassistant:/config
+        mqtt: 
+                image: toke/mosquitto
+                container_name: mqtt
+                ports:
+                        - 1883:1883
+                        - 9001:9001
+                volumes:
+                        - /etc/homeassistant/mqtt/config:/mqtt/config:ro
+                        - /etc/homeassistant/mqtt/data:/mqtt/data
+                        - /etc/homeassistant/mqtt/log:/mqtt/log
