@@ -1,6 +1,6 @@
 
 - name: Setting up HomeAssistant and mqtt
-  hosts: dockerhost
+  hosts: media
   connection: local
   gather_facts: no
   tasks:
