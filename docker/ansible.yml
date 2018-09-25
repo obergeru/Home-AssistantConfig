@@ -1,0 +1,23 @@
+
+- name: Setting up HomeAssistant and mqtt
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: stopping services
+      docker_service:
+       project_src: .
+       state: absent
+
+    - docker_service:
+        project_src: . 
+      register: output
+
+    - debug:
+            var: output.ansible_facts.homeassistant.homeassistant.state.running
+
+    - assert:
+             that:
+                     - homeassistant.homeassistant.state.running
+                     - mqtt.mqtt.state.running
+

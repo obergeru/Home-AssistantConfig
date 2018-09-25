@@ -1,13 +1,15 @@
-version: '2'
+version: '3'
 services:
         homeassistant:
-                image: homeassistant
-                build: homeassistant/
                 container_name: homeassistant
-                network_mode: "host"
+                image: homeassistant/home-assistant
                 volumes:
+                        - /etc/homeassistant/:/config
                         - /etc/localtime:/etc/localtime:ro
-                        - /etc/homeassistant:/config
+                devices:
+                        - /dev/ttyACM0:/zwaveusbstick:rwm
+                restart: always
+                network_mode: host
         mqtt: 
                 image: toke/mosquitto
                 container_name: mqtt

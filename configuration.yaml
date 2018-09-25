@@ -14,11 +14,10 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-#introduction:
+introduction:
 
 # Enables the frontend
 frontend:
-        javascript_version: latest
 
 # Enables configuration UI
 config:
@@ -110,6 +109,9 @@ sensor:
 
         - platform: yr
 
+binary_sensor:
+          - platform: aurora
+
 # Text to speech
 tts:
   - platform: google
@@ -134,3 +136,10 @@ device_tracker:
             username: admin
             password: !secret asuswrt
             protocol: telnet
+
+alarm_control_panel:
+          - platform: manual_mqtt
+            state_topic: home/alarm
+            command_topic: home/alarm/set
+
+zwave:
