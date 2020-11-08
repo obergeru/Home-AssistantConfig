@@ -6,4 +6,5 @@
 !docker/
 !docker/*
 secrets.yaml
+!secrets.yaml.gpg
 known_devices.yaml

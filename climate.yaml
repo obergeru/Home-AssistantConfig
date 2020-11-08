@@ -1,0 +1,5 @@
+- platform: adax
+  account_id: !secret adax_account_id
+  password: !secret adax_password
+
+

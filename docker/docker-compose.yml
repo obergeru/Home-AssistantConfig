@@ -2,21 +2,11 @@ version: '3'
 services:
         homeassistant:
                 container_name: homeassistant
-                image: homeassistant/home-assistant
-                volumes:
-                        - /etc/homeassistant/:/config
-                        - /etc/localtime:/etc/localtime:ro
-                devices:
-                        - /dev/ttyACM0:/zwaveusbstick:rwm
-                restart: always
-                network_mode: host
-        mqtt: 
-                image: toke/mosquitto
-                container_name: mqtt
+                image: homeassistant/home-assistant:stable 
                 ports:
-                        - 1883:1883
-                        - 9001:9001
+                        - "8123:8123"
                 volumes:
-                        - /etc/homeassistant/mqtt/config:/mqtt/config:ro
-                        - /etc/homeassistant/mqtt/data:/mqtt/data
-                        - /etc/homeassistant/mqtt/log:/mqtt/log
+                        - /home/oyvind/src/Home-AssistantConfig:/config
+                        - /etc/localtime:/etc/localtime:ro
+                restart: unless-stopped
+                network_mode: host

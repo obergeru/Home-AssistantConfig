@@ -1,0 +1,8 @@
+username: !secret volvo_username
+password: !secret volvo_password
+name:
+       dp41736: 'Volvo V70'
+resources:
+- odometer
+- lock
+- heater
